@@ -1,0 +1,43 @@
+<h3>Cohorts</h3>
+
+<p>This is where you can create, display, edit, and remove cohorts</p>
+
+<div>
+  <%= link_to 'Home', root_path %>
+</div>
+
+<br>
+
+<div>
+  <%= link_to 'Add New Cohort', new_cohort_path %>
+</div>
+<br>
+
+<div>
+
+  <% if @cohorts!=[] %>
+
+    <% @cohorts.each do |cohort| %>
+
+      <div>
+        Cohort: <%= cohort.name %>
+      </div>
+      <div>
+        Start Date: <%= cohort.start_date %>
+      </div>
+      <div>
+        End Date: <%= cohort.end_date %>
+      </div>
+
+      <div>
+        <%= link_to 'View', cohort_path(cohort) %>
+        <%= link_to 'Edit', edit_cohort_path(cohort) %>
+        <%= link_to 'Delete', cohort_path(cohort), 'data-method': 'DELETE', 'data': { confirm: 'Are you sure?' } %>
+      </div>
+
+      <br>
+    <% end %> 
+
+  <% end %>
+  
+</div>

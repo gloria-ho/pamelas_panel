@@ -1,0 +1,25 @@
+<%= form_for @instructor do |f| %>
+  <div>
+    <% f.label :f_name %>First Name: 
+    <%= f.text_field :f_name %>
+  </div>
+
+  <div>
+    <% f.label :l_name %>Last Name: 
+    <%= f.text_field :l_name %>
+  </div>
+
+  <div>
+    <% f.label :birthday %>Birthday: 
+    <%= f.date_field :birthday %>
+  </div>
+
+  <div>
+    <% f.label :education %>Highest Level of Education: 
+    <%= f.select :education, ['HS', 'College', 'Masters', 'PhD'] %>
+  </div>
+  
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>

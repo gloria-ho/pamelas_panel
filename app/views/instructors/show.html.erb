@@ -1,0 +1,20 @@
+<h3>Instructor Details:</h3>
+
+<div>
+  First Name: <%= @instructor.f_name %>
+</div>
+
+<div>
+  Last Name: <%= @instructor.l_name %>
+</div>
+
+<div>
+  Brithday: <%= @instructor.birthday.strftime("%m/%d/%Y") %>
+</div>
+
+<div>
+  Highest Level of Education: <%= @instructor.education %>
+</div>
+
+<br>
+<%= link_to 'Back', instructors_path %>

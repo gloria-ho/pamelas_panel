@@ -1,0 +1,33 @@
+<h3>Instructors</h3>
+
+<p>This is where you can create, display, edit, and remove Instructors</p>
+
+<p>Make me pretty</p>
+
+<div>
+  <%= link_to 'Add New Instructor', new_instructor_path %>
+</div>
+<br>
+
+<div>
+
+  <% if @instructors!=[] %>
+
+    <% @instructors.each do |instructor| %>
+
+      <div>
+        Name: <%= instructor.f_name %> <%= instructor.l_name %>
+      </div>
+
+      <div>
+        <%= link_to 'View', instructor_path(instructor) %>
+        <%= link_to 'Edit', edit_instructor_path(instructor) %>
+        <%= link_to 'Delete', instructor_path(instructor), 'data-method': 'DELETE', 'data': { confirm: 'Are you sure?' } %>
+      </div>
+
+      <br>
+    <% end %> 
+
+  <% end %>
+  
+</div>
