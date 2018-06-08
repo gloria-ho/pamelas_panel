@@ -1,5 +1,9 @@
 {
   "name": "pamelas_panel",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bootstrap": "4.1.1",
+    "toastr": "^2.1.4"
+  }
 }

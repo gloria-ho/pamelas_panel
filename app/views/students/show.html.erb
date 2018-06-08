@@ -1,1 +1,20 @@
-<h2></h2>
+<h3>Student Details:</h3>
+
+<div>
+  First Name: <%= @student.f_name %>
+</div>
+
+<div>
+  Last Name: <%= @student.l_name %>
+</div>
+
+<div>
+  Brithday: <%= @student.birthday.strftime("%m/%d/%Y") %>
+</div>
+
+<div>
+  Highest Level of Education: <%= @student.education %>
+</div>
+
+<br>
+<%= link_to 'Back', students_path %>

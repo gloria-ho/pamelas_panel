@@ -1,5 +1,5 @@
 class StudentsController < ApplicationController
-
+  
   def index
     @students = Student.all
   end
@@ -14,6 +14,7 @@ class StudentsController < ApplicationController
 
   def create
     Student.create(students_params)
+    flash[:success] = "Student has been successfully created."
     redirect_to students_path
   end
 

@@ -4,5 +4,8 @@ Rails.application.routes.draw do
   root :to => 'home#index'
 
   resources :students
+  resources :instructors
+  resources :cohorts
+  resources :courses
 
 end

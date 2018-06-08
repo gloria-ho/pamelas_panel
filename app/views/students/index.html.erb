@@ -1,8 +1,8 @@
-<h2>Student Panel</h2>
+<h3>Students</h3>
 
-<p>This is where you can create, display, edit, and remove students
-<br>
-Make me pretty</p>
+<p>This is where you can create, display, edit, and remove students</p>
+
+<p>Make me pretty</p>
 
 <div>
   <%= link_to 'Add New Student', new_student_path %>
@@ -10,33 +10,19 @@ Make me pretty</p>
 <br>
 
 <div>
-
   <% if @students!=[] %>
 
     <% @students.each do |student| %>
-
       <div>
-        Student Name: <%= student.f_name %> <%= student.l_name %>
+        Name: <%= student.f_name %> <%= student.l_name %>
       </div>
-
-      <div>
-        Birthday: <%= student.birthday.strftime("%m/%d/%Y")%>
-      </div>
-
-      <div>
-        Highest Level of Education: <%= student.education %>
-      </div>
-
       <div>
         <%= link_to 'View', student_path(student) %>
         <%= link_to 'Edit', edit_student_path(student) %>
-        <%= link_to 'Delete', student_path(student), 'data-method': 'DELETE', 'data': { confirm: 'Are you sure' } %>
-    
+        <%= link_to 'Delete', student_path(student), 'data-method': 'DELETE', 'data': { confirm: 'Are you sure?' } %>
       </div>
-
       <br>
     <% end %> 
 
   <% end %>
-  
 </div>
