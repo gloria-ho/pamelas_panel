@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   resources :students
   resources :instructors
-  resources :cohorts
+  resources :cohorts do
+    resources :cohorts_student, only: [:new, :create]
+  end
   resources :courses
 
 end

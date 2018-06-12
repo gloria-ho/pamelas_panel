@@ -10,10 +10,13 @@ class CohortsController < ApplicationController
 
   def new
     @cohort = Cohort.new
+    @courses = Course.pluck(:id, :name).map{|course| course.join(' ')}
+    @instructors = Instructor.pluck(:id, :f_name, :l_name).map{|names| names.join(' ')}
+    @students = Student.pluck(:id, :f_name, :l_name).map{|names| names.join(' ')}
   end
 
   def create
-    Cohort.create(cohorts_params)
+    Cohort.create(cohort_params)
     flash[:success] = "Cohort has been successfully created."
     redirect_to cohorts_path
   end
@@ -24,19 +27,19 @@ class CohortsController < ApplicationController
 
   def update
     cohort = Cohort.find(params[:id])
-    Cohort.update(cohorts_params)
+    cohort.update(cohort_params)
     redirect_to cohorts_path
   end
 
   def destroy
-    Cohort.destroy(cohorts_params)
+    Cohort.destroy(cohort_params)
     redirect_to cohorts_path
   end
 
   private
 
-  def cohorts_params
-    params.require(:cohort).permit(:name, :start_date, :end_date)
+  def cohort_params
+    params.require(:cohort).permit(:name, :start_date, :end_date, :course, :instructors, :students, :course_id, :instructor_ids, :student_ids)
   end
 
 end

@@ -13,7 +13,7 @@ class StudentsController < ApplicationController
   end
 
   def create
-    Student.create(students_params)
+    Student.create(student_params)
     flash[:success] = "Student has been successfully created."
     redirect_to students_path
   end
@@ -33,7 +33,7 @@ class StudentsController < ApplicationController
     redirect_to students_path
   end
 
-  def students_params
+  def student_params
     params.require(:student).permit(:f_name, :l_name, :birthday, :education)
   end
 

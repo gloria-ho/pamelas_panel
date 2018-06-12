@@ -13,7 +13,7 @@ class CoursesController < ApplicationController
   end
 
   def create
-    Course.create(courses_params)
+    Course.create(course_params)
     flash[:success] = "Course has been successfully created."
     redirect_to courses_path
   end
@@ -35,7 +35,7 @@ class CoursesController < ApplicationController
 
   private
 
-  def courses_params
+  def course_params
     params.require(:course).permit(:name, :hours)
   end
 

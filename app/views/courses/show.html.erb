@@ -1,0 +1,16 @@
+<h3>Course Details:</h3>
+
+<div>
+  Name: <%= @course.name %>
+</div>
+
+<div>
+   Total Course Hours: <%= @course.hours %>
+</div>
+
+<div>
+   Course Creation: <%= @course.created_at %>
+</div>
+
+<br>
+<%= link_to 'Back', courses_path %>

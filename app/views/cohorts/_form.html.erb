@@ -10,8 +10,23 @@
   </div>
 
   <div>
-    <% f.label :end_date %> Start Date: 
+    <% f.label :end_date %> End Date: 
     <%= f.date_field :end_date %>
+  </div>
+  
+  <div>
+    <% f.label :course %>Course: 
+    <%= f.select :course_id, @courses %>
+  </div>
+
+  <div>
+    <% f.label :instructor %>Instructor: 
+    <%= f.select :instructor_ids, @instructors %>
+  </div>
+
+  <div>
+    <% f.label :student %>Students: 
+    <%= f.select :student_ids, @students %>
   </div>
 
   <div>

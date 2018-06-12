@@ -13,7 +13,7 @@ class InstructorsController < ApplicationController
   end
 
   def create
-    Instructor.create(instructors_params)
+    Instructor.create(instructor_params)
     flash[:success] = "Instructor has been successfully created."
     redirect_to instructors_path
   end
@@ -24,7 +24,7 @@ class InstructorsController < ApplicationController
 
   def update
     instructor = Instructor.find(params[:id])
-    Instructor.update(instructors_params)
+    Instructor.update(instructor_params)
     redirect_to instructors_path
   end
 
@@ -35,7 +35,7 @@ class InstructorsController < ApplicationController
 
   private
 
-  def instructors_params
+  def instructor_params
     params.require(:instructor).permit(:f_name, :l_name, :birthday, :education)
   end
 
