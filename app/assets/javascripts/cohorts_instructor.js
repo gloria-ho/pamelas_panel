@@ -2,7 +2,7 @@
 // All this logic will automatically be available in application.js.
 
 $(document).ready(function() {
-  if ($('body.cohort-instructors.index').length == 0) {
+  if ($('body.cohorts_instructors.index').length == 0) {
     return;
   }
   $('.delete-cohort-instructor').click(function(e){

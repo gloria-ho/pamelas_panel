@@ -1,3 +1,4 @@
 class Course < ApplicationRecord
-  has_many :cohorts
+  validates :name, :hours, presence: true
+  has_many :cohorts, dependent: :destroy
 end

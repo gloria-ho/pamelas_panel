@@ -1,4 +1,5 @@
 class CohortsStudentsController < ApplicationController
+  before_action :authenticate_user!
   skip_before_action :verify_authenticity_token, only: [:destroy]
 
   def index
@@ -34,7 +35,7 @@ class CohortsStudentsController < ApplicationController
   end
 
   def destroy
-    Course.destroy(cohort_instructor_params)
+    CohortsStudent.destroy(params[:id])
     render json: {status: 'success', message: 'Cohort Student was successfully deleted'}
   end
 
