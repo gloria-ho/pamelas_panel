@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2018_06_08_214428) do
   end
 
   create_table "cohorts_instructors", force: :cascade do |t|
-    t.integer "intructor_id"
+    t.integer "instructor_id"
     t.integer "cohort_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

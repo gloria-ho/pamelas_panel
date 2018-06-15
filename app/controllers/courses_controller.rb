@@ -1,7 +1,8 @@
 class CoursesController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [:destroy]
 
   def index
-    @courses = Course.all
+    @courses = Course.all.order(:id)
   end
 
   def show
@@ -24,13 +25,13 @@ class CoursesController < ApplicationController
 
   def update
     course = Course.find(params[:id])
-    Course.update(course_params)
+    course.update(course_params)
     redirect_to courses_path
   end
 
   def destroy
     Course.destroy(course_params)
-    redirect_to courses_path
+    render json: {status: 'success', message: 'Course was successfully deleted'}
   end
 
   private

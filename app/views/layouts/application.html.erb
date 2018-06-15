@@ -9,7 +9,7 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
-  <body>
+  <body class="<%= controller_name %> <%= action_name %>">
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -20,6 +20,10 @@
               <li><%= link_to 'Instructors', instructors_path %></li>
               <li><%= link_to 'Courses', courses_path %></li>
               <li><%= link_to 'Cohorts', cohorts_path %></li>
+            </ul>
+            <ul>
+              <li><%= link_to 'Edit Cohort Instructors', cohorts_instructors_path %></li>
+              <li><%= link_to 'Edit Cohort Students', cohorts_students_path %></li>
             </ul>
           </nav>
         </div>

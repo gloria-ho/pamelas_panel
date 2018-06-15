@@ -1,6 +1,6 @@
 <h3>Courses</h3>
 
-<p>This is where you can create, display, edit, and remove courses</p>
+<p>This is where you can create, display, edit, and remove Courses</p>
 
 <div>
   <%= link_to 'Add New Course', new_course_path %>
@@ -8,27 +8,25 @@
 <br>
 
 <div>
-
   <% if @courses!=[] %>
-
     <% @courses.each do |course| %>
 
-      <div>
-        Course: <%= course.name %>
-      </div>
-      <div>
-        Total Course Hours: <%= course.hours %>
+        <div class="course-div">
+          <div>
+            Course: <%= course.name %>
+          </div>
+          <div>
+            Total Course Hours: <%= course.hours %>
+          </div>
+
+          <div>
+            <%= link_to 'View', course_path(course) %>
+            <%= link_to 'Edit', edit_course_path(course) %>
+            <%= link_to 'Delete', course, class: 'delete-course' %>
+          </div>
+          <br>
       </div>
 
-      <div>
-        <%= link_to 'View', course_path(course) %>
-        <%= link_to 'Edit', edit_course_path(course) %>
-        <%= link_to 'Delete', course_path(course), 'data-method': 'DELETE', 'data': { confirm: 'Are you sure?' } %>
-      </div>
-
-      <br>
     <% end %> 
-
   <% end %>
-  
 </div>

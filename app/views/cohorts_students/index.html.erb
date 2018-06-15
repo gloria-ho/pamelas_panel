@@ -1,0 +1,37 @@
+<h3>Cohort Students</h3>
+
+<p>This is where you can create, display, edit, and remove Cohort Students</p>
+
+<div>
+  <%= link_to 'Assign New Cohort Student', new_cohorts_student_path %>
+</div>
+<br>
+
+<div>
+
+  <% if @cohorts_students!=[] %>
+    <% @cohorts_students.each do |cohort_student| %>
+
+      <div class="cohort-student-div">
+        <div>
+          Cohort: <%= cohort_student.cohort_id %>
+        </div>
+        <div>
+          Assigned Student: <%= cohort_student.student_id %>
+        </div>
+        <div>
+          Assigned Date: <%= cohort_student.created_at %>
+        </div>
+        
+
+        <div>
+          <%= link_to 'Edit', edit_cohorts_student_path(cohort_student) %>
+          <%= link_to 'Delete', cohort_student, class: 'delete-cohort-student' %>
+        </div>
+        <br>
+      </div>
+      
+    <% end %> 
+  <% end %>
+  
+</div>

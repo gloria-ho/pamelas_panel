@@ -1,4 +1,4 @@
 class CohortsInstructor < ApplicationRecord
-  belongs_to :cohorts
-  has_many :instructors
+  belongs_to :cohort
+  belongs_to :instructor
 end

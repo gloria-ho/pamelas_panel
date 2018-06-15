@@ -1,0 +1,15 @@
+<%= form_for @cohorts_instructor do |f| %>
+  <div>
+    <% f.label :instructor %>Instructor: 
+    <%= f.select :instructor_id, @instructors %>
+  </div>
+
+  <div>
+    <% f.label :cohort %>Cohort: 
+    <%= f.select :cohort_id, @cohorts %>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,7 +1,8 @@
 class CohortsController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [:destroy]
 
   def index
-    @cohorts = Cohort.all
+    @cohorts = Cohort.all.order(:start_date)
   end
 
   def show
@@ -23,6 +24,7 @@ class CohortsController < ApplicationController
 
   def edit
     @cohort = Cohort.find(params[:id])
+    @courses = Course.pluck(:id, :name).map{|course| course.join(' ')}
   end
 
   def update
@@ -33,7 +35,7 @@ class CohortsController < ApplicationController
 
   def destroy
     Cohort.destroy(cohort_params)
-    redirect_to cohorts_path
+    render json: {status: 'success', message: 'Cohort was successfully deleted'}
   end
 
   private

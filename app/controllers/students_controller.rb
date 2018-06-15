@@ -1,7 +1,8 @@
 class StudentsController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [:destroy]
   
   def index
-    @students = Student.all
+    @students = Student.all.order(:l_name)
   end
 
   def show
@@ -14,7 +15,7 @@ class StudentsController < ApplicationController
 
   def create
     Student.create(student_params)
-    flash[:success] = "Student has been successfully created."
+    flash[:success] = 'Student has been successfully created.'
     redirect_to students_path
   end
 
@@ -24,14 +25,16 @@ class StudentsController < ApplicationController
 
   def update
     student = Student.find(params[:id])
-    Student.update(student_params)
+    student.update(student_params)
     redirect_to students_path
   end
 
   def destroy
     Student.destroy(params[:id])
-    redirect_to students_path
+    render json: {status: 'success', message: 'Student was successfully deleted'}
   end
+
+  private
 
   def student_params
     params.require(:student).permit(:f_name, :l_name, :birthday, :education)

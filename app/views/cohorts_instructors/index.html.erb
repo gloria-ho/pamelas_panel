@@ -1,0 +1,38 @@
+<h3>Cohort Instructors</h3>
+
+<p>This is where you can create, display, edit, and remove Cohort Instructors</p>
+
+<div>
+  <%= link_to 'Assign New Cohort Instructor', new_cohorts_instructor_path %>
+</div>
+<br>
+
+<div>
+
+  <% if @cohorts_instructors!=[] %>
+    <% @cohorts_instructors.each do |cohort_instructor| %>
+
+      <div class="cohort-instructor-div">
+        <div>
+          Cohort: <%= cohort_instructor.cohort_id %>
+        </div>
+        <div>
+          Assigned Instructor: <%= cohort_instructor.instructor_id %>
+        </div>
+        <div>
+          Assigned Date: <%= cohort_instructor.created_at %>
+        </div>
+        
+  
+        <div>
+          <%= link_to 'Edit', edit_cohorts_instructor_path(cohort_instructor) %>
+          <%= link_to 'Delete', cohort_instructor, class: 'delete-cohort-instructor' %>
+        </div>
+  
+        <br>
+      </div>
+
+    <% end %> 
+  <% end %>
+  
+</div>

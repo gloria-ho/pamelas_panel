@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   resources :instructors
   resources :cohorts do
     resources :cohorts_student, only: [:new, :create]
+    resources :cohorts_instructors, only: [:new, :create]
   end
   resources :courses
+  resources :cohorts_instructors
+  resources :cohorts_students
 
 end
