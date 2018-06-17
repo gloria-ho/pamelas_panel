@@ -3,7 +3,7 @@ class CohortsInstructorsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:destroy]
     
   def index
-    @cohorts_instructors = CohortsInstructor.all
+    @cohorts_instructors = CohortsInstructor.all.order(:cohort_id)
   end
 
   def show

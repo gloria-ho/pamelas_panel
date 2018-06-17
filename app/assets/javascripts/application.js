@@ -14,4 +14,5 @@
 //= require jquery/dist/jquery
 //= require axios/dist/axios
 //= require toastr/build/toastr.min
+//= require bootstrap/dist/js/bootstrap
 //= require_tree .

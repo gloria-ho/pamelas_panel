@@ -8,31 +8,33 @@
 <br>
 
 <div>
-
   <% if @cohorts_instructors!=[] %>
-    <% @cohorts_instructors.each do |cohort_instructor| %>
+  
+    <table class="table table-striped table-hover">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">Cohort</th>
+          <th scope="col">Instructor</th>
+          <th scope="col">Assigned</th>
+          <th scope="col">Options</th>
+        </tr>
+      </thead>
 
-      <div class="cohort-instructor-div">
-        <div>
-          Cohort: <%= cohort_instructor.cohort_id %>
-        </div>
-        <div>
-          Assigned Instructor: <%= cohort_instructor.instructor_id %>
-        </div>
-        <div>
-          Assigned Date: <%= cohort_instructor.created_at %>
-        </div>
-        
-  
-        <div>
-          <%= link_to 'Edit', edit_cohorts_instructor_path(cohort_instructor) %>
-          <%= link_to 'Remove Instructor', cohort_instructor, class: 'delete-cohort-instructor' %>
-        </div>
-  
-        <br>
-      </div>
-
-    <% end %> 
-  <% end %>
-  
+      <tbody>
+        <% @cohorts_instructors.each do |cohort_instructor| %>
+        <tr class="cohort-instructor-div">
+          <th scope="row"><%= cohort_instructor.cohort.name%></th>
+          <td><%= cohort_instructor.instructor.f_name %> <%= cohort_instructor.instructor.l_name %></td>
+          <td><%= cohort_instructor.created_at.strftime('%Y-%m-%d') %></td>
+          <td class="links">
+            <%= link_to 'View Cohort', cohorts_path(cohort_instructor.cohort.id) %>
+            <%= link_to 'Edit', edit_cohorts_instructor_path(cohort_instructor) %>
+            <%= link_to 'Remove', cohort_instructor, class: 'delete-cohort_instructor' %>
+          </td>
+        </tr>
+        <% end %> 
+      </tbody>
+    </table>
+    
+  <% end %>  
 </div>

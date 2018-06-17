@@ -9,24 +9,30 @@
 
 <div>
   <% if @courses!=[] %>
-    <% @courses.each do |course| %>
 
-        <div class="course-div">
-          <div>
-            Course: <%= course.name %>
-          </div>
-          <div>
-            Total Course Hours: <%= course.hours %>
-          </div>
+      <table class="table table-striped table-hover">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">Id #</th>
+            <th scope="col">Name</th>
+            <th scope="col">Options</th>
+          </tr>
+        </thead>
 
-          <div>
-            <%= link_to 'View', course_path(course) %>
-            <%= link_to 'Edit', edit_course_path(course) %>
-            <%= link_to 'Delete', course, class: 'delete-course' %>
-          </div>
-          <br>
-      </div>
+        <tbody>
+          <% @courses.each do |course| %>
+          <tr class="course-div">
+            <th scope="row"><%= course.id%></th>
+            <td><%= course.name %></td>
+            <td class="links">
+              <%= link_to 'View', course_path(course) %>
+              <%= link_to 'Edit', edit_course_path(course) %>
+              <%= link_to 'Delete', course, class: 'delete-course' %>
+            </td>
+          </tr>
+          <% end %> 
+        </tbody>
+      </table>
 
-    <% end %> 
   <% end %>
 </div>

@@ -1,20 +1,36 @@
 <h3>Instructor Details:</h3>
 
-<div>
-  First Name: <%= @instructor.f_name %>
-</div>
+<table class="table table-striped table-hover">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Id #</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Birthday</th>
+      <th scope="col">Education</th>
+      <th scope="col">Registered</th>
+      <th scope="col">Last Updated</th>
+      <th scope="col">Options</th>
+    </tr>
+  </thead>
 
-<div>
-  Last Name: <%= @instructor.l_name %>
-</div>
-
-<div>
-  Brithday: <%= @instructor.birthday.strftime("%m/%d/%Y") %>
-</div>
-
-<div>
-  Highest Level of Education: <%= @instructor.education %>
-</div>
+  <tbody>
+    <tr>
+      <th scope="row"><%= @instructor.id%></th>
+      <td><%= @instructor.f_name %></td>
+      <td><%= @instructor.l_name %></td>
+      <td><%= @instructor.birthday.strftime("%m/%d/%Y") %></td>
+      <td><%= @instructor.education %></td>
+      <td><%= @instructor.created_at.strftime('%Y-%m-%d %H:%M:%S') %></td>
+      <td><%= @instructor.updated_at.strftime('%Y-%m-%d %H:%M:%S') %></td>
+      <td class="links">
+        <%= link_to 'Edit', edit_instructor_path(@instructor) %>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 <br>
-<%= link_to 'Back', instructors_path %>
+<div  class="links">
+  <%= link_to 'Back', instructors_path %>
+</div>

@@ -1,10 +1,18 @@
-<h2>Welcome to the Admin Panel!</h2>
-
-<div>
-  <h4>This is where you log in</h4>
+<div class="welcome-img-div auto-margin">
+  <% if user_signed_in? %>
+    <h2>Welcome back to the Admin Panel, <%= @user.f_name %>!</h2>
+    <div class="auto-margin">
+      <%= image_tag image_path('hall.jpg'), alt: 'school image' %>
+    </div>
+  <% else %>
+    <h2>Welcome to the Admin Panel! Please log in.</h2>
+    <div>
+      <%= image_tag image_path('apple.jpg'), alt: 'apple image' %>
+    </div>0
+  <% end %>
 </div>
 <br>
-<div class="center">
+<div class="center links logo">
   <!-- <%= link_to 'Sign Up', new_user_registration_path %><br> -->
   <% unless @current_user != nil %>
   <%= link_to 'Log In', new_user_session_path %><br>
