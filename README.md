@@ -6,6 +6,10 @@
 To create an admin panel for a fictitious school whereby the administrator can create users and complete common administrative tasks.
 
 
+### Heroku Deployment
+<https://gh-pamelas-panel.herokuapp.com/>
+
+
 ### Sample Login:
 Username: *admin@panel.com*
 
@@ -14,7 +18,11 @@ Password: *password*
 
 ## Built With
 * Ruby on Rails v.5.2.0
+* ActiveRecord
 * PostgreSQL
+* User Authentication via Cookies
+* Deploying to Heroku
+* Bootstrap
 
 
 ## Learning Objectives:  
