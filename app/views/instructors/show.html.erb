@@ -7,6 +7,7 @@
       <th scope="col">First</th>
       <th scope="col">Last</th>
       <th scope="col">Birthday</th>
+      <th scope="col">Salary</th>
       <th scope="col">Education</th>
       <th scope="col">Registered</th>
       <th scope="col">Last Updated</th>
@@ -20,6 +21,7 @@
       <td><%= @instructor.f_name %></td>
       <td><%= @instructor.l_name %></td>
       <td><%= @instructor.birthday.strftime("%m/%d/%Y") %></td>
+      <td><%= number_to_currency(@instructor.salary, precision: 0) %></td>
       <td><%= @instructor.education %></td>
       <td><%= @instructor.created_at.strftime('%Y-%m-%d %H:%M:%S') %></td>
       <td><%= @instructor.updated_at.strftime('%Y-%m-%d %H:%M:%S') %></td>

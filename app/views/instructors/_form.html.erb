@@ -15,6 +15,11 @@
   </div>
 
   <div>
+    <% f.label :salary %>Salary: 
+    <%= f.number_field :salary %>
+  </div>
+
+  <div>
     <% f.label :education %>Highest Level of Education: 
     <%= f.select :education, ['HS', 'College', 'Masters', 'PhD'] %>
   </div>
