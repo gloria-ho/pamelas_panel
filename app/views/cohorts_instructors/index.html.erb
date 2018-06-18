@@ -27,7 +27,7 @@
           <td><%= cohort_instructor.instructor.f_name %> <%= cohort_instructor.instructor.l_name %></td>
           <td><%= cohort_instructor.created_at.strftime('%Y-%m-%d') %></td>
           <td class="links">
-            <%= link_to 'View Cohort', cohorts_path(cohort_instructor.cohort.id) %>
+            <%= link_to 'View Cohort', cohort_path(cohort_instructor.cohort.id) %>
             <%= link_to 'Edit', edit_cohorts_instructor_path(cohort_instructor) %>
             <%= link_to 'Remove', cohort_instructor, class: 'delete-cohort_instructor' %>
           </td>

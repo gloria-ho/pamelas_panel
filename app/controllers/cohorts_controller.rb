@@ -8,6 +8,9 @@ class CohortsController < ApplicationController
 
   def show
     @cohort = Cohort.find(params[:id])
+    @instructors = @cohort.instructors.all.order(:l_name)
+    @students = @cohort.students.all.order(:l_name)
+
   end
 
   def new

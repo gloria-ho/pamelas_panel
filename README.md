@@ -1,13 +1,20 @@
 # Pamela’s Panel
 
 
-* Ruby on Rails v.5.2.0
-* PostgreSQL
-
-
 ## Goal:
 
 To create an admin panel for a fictitious school whereby the administrator can create users and complete common administrative tasks.
+
+
+### Sample Login:
+Username: *admin@panel.com*
+
+Password: *password*
+
+
+## Built With
+* Ruby on Rails v.5.2.0
+* PostgreSQL
 
 
 ## Learning Objectives:  

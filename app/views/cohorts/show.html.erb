@@ -13,11 +13,11 @@
   </div>
 
   <div>
-    Instructors: 
+    Instructors: <% @instructors.each do |instructor| %>[ <%= instructor.f_name%> <%= instructor.l_name%>, <%= link_to 'View', instructor_path(instructor) %> ] <% end %>
   </div>
 
   <div>
-    Students: 
+    Students: <% @students.each do |student| %>[ <%= student.f_name%> <%= student.l_name%>, <%= link_to 'View', student_path(student) %> ] <% end %>
   </div>
 
 <br>

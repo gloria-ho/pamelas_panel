@@ -28,7 +28,7 @@
           <td><%= cohort_student.student.f_name %> <%= cohort_student.student.l_name %></td>
           <td><%= cohort_student.created_at.strftime("%Y-%m-%d")%></td>
           <td class="links">
-            <%= link_to "View Cohort",  cohorts_path(cohort_student.cohort.id) %>
+            <%= link_to "View Cohort",  cohort_path(cohort_student.cohort.id) %>
             <%= link_to "Edit", edit_cohorts_student_path(cohort_student) %>
             <%= link_to "Unregister", cohort_student, class: "delete-cohort-student" %>
           </td>
