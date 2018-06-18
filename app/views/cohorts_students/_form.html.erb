@@ -2,12 +2,12 @@
 
   <div>
     <% f.label :cohort %>Cohort: 
-    <%= f.select :cohort_id, @cohorts %>
+    <%= f.select :cohort_id, options_for_select(@cohorts, @cohorts_student.cohort_id) %>
   </div>
 
   <div>
     <% f.label :student %>Student: 
-    <%= f.select :student_id, @students %>
+    <%= f.select :student_id, options_for_select(@students, @cohorts_student.student_id) %>
   </div>
 
   <div>

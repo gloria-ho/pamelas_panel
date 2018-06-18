@@ -1,7 +1,7 @@
-<h3>Edit Cohort Instructor: <%= @cohorts_instructor.cohort_id %></h3>
+<h3>Edit Cohort Instructor: <%= @cohorts_instructor.cohort.name %> - <%= @cohorts_instructor.instructor.f_name %> <%= @cohorts_instructor.instructor.l_name %></h3>
 
 <%= render 'form' %>
 <br>
 <div class="links">
-  <%= link_to 'Cancel', cohorts_instructors_path %>
+  <%= link_to 'Cancel', cohorts_instructors_path, 'class': 'btn btn-outline-secondary btn-lg btn-block' %>
 </div>

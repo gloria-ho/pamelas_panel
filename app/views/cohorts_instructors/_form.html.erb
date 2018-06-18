@@ -1,12 +1,13 @@
 <%= form_for @cohorts_instructor do |f| %>
-  <div>
-    <% f.label :instructor %>Instructor: 
-    <%= f.select :instructor_id, @instructors %>
-  </div>
 
   <div>
     <% f.label :cohort %>Cohort: 
-    <%= f.select :cohort_id, @cohorts %>
+    <%= f.select :cohort_id, options_for_select(@cohorts, @cohorts_instructor.cohort_id) %>
+  </div>
+
+  <div>
+    <% f.label :instructor %>Instructor: 
+    <%= f.select :instructor_id, options_for_select(@instructors, @cohorts_instructor.instructor_id) %>
   </div>
 
   <div>
