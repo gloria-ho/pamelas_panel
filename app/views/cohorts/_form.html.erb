@@ -16,7 +16,7 @@
   
   <div>
     <% f.label :course %>Course: 
-    <%= f.select :course_id, @courses %>
+    <%= f.select :course_id, options_for_select(@courses, @cohort.course_id) %>
   </div>
 
 

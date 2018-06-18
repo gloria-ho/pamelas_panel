@@ -15,9 +15,10 @@ class CohortsController < ApplicationController
 
   def new
     @cohort = Cohort.new
-    @courses = Course.pluck(:id, :name).map{|course| course.join(' ')}
-    @instructors = Instructor.pluck(:id, :f_name, :l_name).map{|names| names.join(' ')}
-    @students = Student.pluck(:id, :f_name, :l_name).map{|names| names.join(' ')}
+    @courses = Course.all.map{ |c| [c.name, c.id]}
+    @cohorts = Cohort.all.map{ |c| [c.name, c.id]}
+    @instructors = Instructor.all.map{|i| ["#{i.f_name} #{i.l_name}", i.id]}
+    @students = Student.all.map{|s| ["#{s.f_name} #{s.l_name}", s.id]}
   end
 
   def create
@@ -28,7 +29,7 @@ class CohortsController < ApplicationController
 
   def edit
     @cohort = Cohort.find(params[:id])
-    @courses = Course.pluck(:id, :name).map{|course| course.join(' ')}
+    @courses = Course.all.map{ |c| [c.name, c.id]}
   end
 
   def update

@@ -12,7 +12,7 @@ class CohortsInstructorsController < ApplicationController
 
   def new
     @cohorts = Cohort.all.map{ |c| [c.name, c.id]}
-    @instructors = Instructor.all.map{|i| [i.f_name, i.id]}
+    @instructors = Instructor.all.map{|i| ["#{i.f_name} #{i.l_name}", i.id]}
     @cohorts_instructor = CohortsInstructor.new 
   end
 
